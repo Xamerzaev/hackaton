@@ -70,7 +70,6 @@ class User(AbstractUser):
     account_type = models.CharField(
         choices=AccountType.choices, default=AccountType.GENERAL, max_length=8
     )
-    image = models.ImageField(upload_to='user_images/', blank=True)
     history_event = models.ManyToManyField(Event, related_name='history_users')
     favorite_event = models.ManyToManyField(Event, related_name='favorite_users')
     phone_number = models.CharField(max_length=20, help_text='Введите свой номер телефона')

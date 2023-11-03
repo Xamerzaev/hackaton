@@ -78,6 +78,8 @@ class UserSerializer(serializers.ModelSerializer):
             "name",
             "email",
             "account_type",
+            "history_event",
+            "favorite_event",
             "profile_pic",
         )
 
