@@ -1,1 +1,0 @@
-from powerbank.apps.powerbank.serializers.items_serializers import ItemsSerializer

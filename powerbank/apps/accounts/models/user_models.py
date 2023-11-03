@@ -51,6 +51,12 @@ class AccountType(models.TextChoices):
 
 
 class User(AbstractUser):
+    ROLES = (
+        ('CL', 'Client'),
+        ('MS', 'Master'),
+        ('OW', 'Owner'),
+    )
+
     username = None
     name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
@@ -63,6 +69,7 @@ class User(AbstractUser):
     account_type = models.CharField(
         choices=AccountType.choices, default=AccountType.GENERAL, max_length=8
     )
+    role = models.CharField(max_length=100, choices=ROLES, default='CL')
     first_name = None
     last_name = None
 

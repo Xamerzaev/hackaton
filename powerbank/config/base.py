@@ -54,7 +54,7 @@ class Common(Configuration):
         # our apps
         "powerbank.apps.common.apps.CommonConfig",
         "powerbank.apps.accounts.apps.AccountsConfig",
-        "powerbank.apps.powerbank.apps.PowerbankConfig",
+        'powerbank.apps.shop.apps.ShopConfig',
     ]
 
     MIDDLEWARE = [

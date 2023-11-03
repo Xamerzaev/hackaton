@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PowerbankConfig(AppConfig):
+class ShopConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "powerbank.apps.powerbank"
+    name = "powerbank.apps.shop"
