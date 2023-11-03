@@ -17,12 +17,12 @@ class Event(models.Model):
     craeted_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+
 class Review(models.Model):
     description = models.TextField()
     rating = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)],
-        default=1  # You can set a default value if needed
-    )
+        default=1)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
@@ -30,3 +30,9 @@ class Review(models.Model):
 class Recommendation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ManyToManyField(Event)
+
+
+class Participation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    status = models.CharField(verbose_name='Статус заявки')
