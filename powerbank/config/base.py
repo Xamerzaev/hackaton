@@ -51,10 +51,11 @@ class Common(Configuration):
         "corsheaders",
         "django_celery_beat",
         "django_celery_results",
+        'django.contrib.gis',
         # our apps
         "powerbank.apps.common.apps.CommonConfig",
         "powerbank.apps.accounts.apps.AccountsConfig",
-        'powerbank.apps.shop.apps.ShopConfig',
+        "powerbank.apps.event.apps.EventConfig",
     ]
 
     MIDDLEWARE = [
