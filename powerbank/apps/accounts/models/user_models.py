@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from powerbank.apps.event.models.event_models import Event
+
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
@@ -52,8 +54,7 @@ class AccountType(models.TextChoices):
 
 class User(AbstractUser):
     ROLES = (
-        ('CL', 'Client'),
-        ('MS', 'Master'),
+        ('US', 'User'),
         ('OW', 'Owner'),
     )
 
@@ -70,8 +71,9 @@ class User(AbstractUser):
         choices=AccountType.choices, default=AccountType.GENERAL, max_length=8
     )
     image = models.ImageField(upload_to='user_images/', blank=True)
-    history_event = models.ManyToManyField()
-    favorite_event = models.ManyToManyField()
+    history_event = models.ManyToManyField(Event)
+    favorite_event = models.ManyToManyField(Event)
+    phone_number = models.CharField(max_length=20, help_text='Введите свой номер телефона')
     first_name = None
     last_name = None
 

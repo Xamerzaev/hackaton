@@ -1,4 +1,4 @@
-from django.contrib.gis.db import models
+from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.conf import settings
 
@@ -10,7 +10,6 @@ class Event(models.Model):
     event_type = models.CharField(max_length=128)
     description = models.TextField()
     start = models.DateTimeField()
-    location = models.PointField()
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='event_images')
     created_at = models.DateTimeField(auto_now_add=True)
