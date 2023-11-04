@@ -5,6 +5,20 @@ from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
 
+class Organization(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='organization_images')
+    creation_date = models.DateField(auto_now_add=True)
+    contact_email = models.EmailField()
+    contact_phone = models.CharField(max_length=15)
+    address = models.TextField()
+    responsible_person = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Event(models.Model):
     name = models.CharField(max_length=256)
     event_type = models.CharField(max_length=128)

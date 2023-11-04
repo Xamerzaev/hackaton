@@ -33,6 +33,7 @@ class CustomRegisterSerializer(RegisterSerializer):
     field_names = [
         "username",
         "name",
+        "role",
         "password1",
         "password2",
         "account_type",
@@ -78,6 +79,7 @@ class UserSerializer(serializers.ModelSerializer):
             "email",
             "account_type",
             "history_event",
+            "role",
             "favorite_event",
             "profile_pic",
         )

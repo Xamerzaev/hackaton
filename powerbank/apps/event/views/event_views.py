@@ -8,12 +8,21 @@ from rest_framework import viewsets
 
 from powerbank.apps.event.models.event_models import (Event,
                                                       Review,
-                                                      Participation)
+                                                      Participation,
+                                                      Organization)
 from powerbank.apps.event.serializers.event_serializers import (EventSerializer,
                                                                 ReviewSerializer,
-                                                                ParticipationSerializer)
+                                                                ParticipationSerializer,
+                                                                OrganizationSerializer)
+
+from powerbank.apps.event.permission import IsParticipant
 
 User = settings.AUTH_USER_MODEL
+
+class OrganizationViewSet(viewsets.ModelViewSet):
+    queryset = Organization.objects.all()
+    serializer_class = OrganizationSerializer
+    permission_classes = [IsParticipant]
 
 
 class EventAPIView(viewsets.ModelViewSet):

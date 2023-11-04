@@ -53,8 +53,13 @@ class AccountType(models.TextChoices):
 
 
 class User(AbstractUser):
+    ROLES = [
+        ("Participant", "participant"),
+        ("Organizer", "organizer"),
+    ]
     username = None
     email = models.EmailField(unique=True)
+    role = models.CharField(max_length=64, choices=ROLES, default='Participant')
     name = models.CharField(max_length=128)
     profile_pic = models.ImageField(
         upload_to=user_directory_path,

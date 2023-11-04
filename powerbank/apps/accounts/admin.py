@@ -9,7 +9,7 @@ from powerbank.apps.accounts.models import User
 class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (_("Login info"), {"fields": ("email", "password")}),
-        (_("Profile info"), {"fields": ("profile_pic", "account_type")}),
+        (_("Profile info"), {"fields": ("profile_pic", "account_type", "role")}),
         (
             _("Permissions"),
             {
