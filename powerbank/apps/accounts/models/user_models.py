@@ -53,13 +53,7 @@ class AccountType(models.TextChoices):
 
 
 class User(AbstractUser):
-    ROLES = (
-        ('US', 'User'),
-        ('OW', 'Owner'),
-    )
-
     username = None
-    name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
     profile_pic = models.ImageField(
         upload_to=user_directory_path,
@@ -77,9 +71,8 @@ class User(AbstractUser):
     last_name = None
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["name"]
-
+    REQUIRED_FIELDS = []
     objects = UserManager()
 
     def __str__(self) -> str:
-        return self.name
+        return self.email

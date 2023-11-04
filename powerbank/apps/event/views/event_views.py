@@ -7,6 +7,8 @@ from powerbank.apps.event.models.event_models import Event, Review, Recommendati
 from powerbank.apps.event.serializers.event_serializers import EventSerializer, ReviewSerializer, RecommendationSerializer, ParticipationSerializer
 
 class EventAPIView(viewsets.ModelViewSet):
+    authentication_classes = []
+    permission_classes = []
     queryset = Event.objects.all()
     serializer_class = EventSerializer
 
