@@ -55,6 +55,7 @@ class AccountType(models.TextChoices):
 class User(AbstractUser):
     username = None
     email = models.EmailField(unique=True)
+    name = models.CharField(max_length=128)
     profile_pic = models.ImageField(
         upload_to=user_directory_path,
         name="profile_pic",
