@@ -25,11 +25,6 @@ class Review(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
 
-class Recommendation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    events = models.ManyToManyField(Event)
-
-
 class Participation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
