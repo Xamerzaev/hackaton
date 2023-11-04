@@ -329,7 +329,7 @@ class Common(Configuration):
 
     # Choose the username field. None if not using username.
     # Omit setting if using the default 'username' field.
-    ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+    ACCOUNT_USER_MODEL_USERNAME_FIELD = 'email'
 
     # Choose whether a username is required during registration.
     # Omit setting if using the default 'username' field.

@@ -53,13 +53,7 @@ class AccountType(models.TextChoices):
 
 
 class User(AbstractUser):
-    ROLES = (
-        ('US', 'User'),
-        ('OW', 'Owner'),
-    )
-
-    username = None
-    name = models.CharField(max_length=255)
+    username = models.CharField(max_length=50, blank=True)
     email = models.EmailField(unique=True)
     profile_pic = models.ImageField(
         upload_to=user_directory_path,
@@ -74,13 +68,13 @@ class User(AbstractUser):
     history_event = models.ManyToManyField(Event, related_name='history_users')
     favorite_event = models.ManyToManyField(Event, related_name='favorite_users')
     phone_number = models.CharField(max_length=20, help_text='Введите свой номер телефона')
-    first_name = None
-    last_name = None
+    fisrt_name = models.CharField(max_length=50, blank=True)
+    last_name = models.CharField(max_length=50, blank=True)
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["name"]
+    REQUIRED_FIELDS = []
 
     objects = UserManager()
 
     def __str__(self) -> str:
-        return self.name
+        return self.email

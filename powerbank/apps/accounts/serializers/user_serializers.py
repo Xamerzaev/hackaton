@@ -1,4 +1,6 @@
 from dj_rest_auth.models import TokenModel
+from rest_framework import status
+from rest_framework.response import Response
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from dj_rest_auth.serializers import (
     LoginSerializer,
@@ -16,7 +18,6 @@ from powerbank.apps.accounts.models.user_models import AccountType, User
 
 class CustomLoginSerializer(LoginSerializer):
     field_names = ["email", "password"]
-    username = None
     email = serializers.EmailField(required=True)
     password = serializers.CharField(style={"input_type": "password"})
 
@@ -31,16 +32,15 @@ class CustomLoginSerializer(LoginSerializer):
 
 class CustomRegisterSerializer(RegisterSerializer):
     field_names = [
+        "email",
         "username",
-        "name",
         "password1",
         "password2",
         "account_type",
     ]
     password_fields = ["password1", "password2"]
 
-    username = None
-    name = serializers.CharField(max_length=255, required=True)
+    username = serializers.CharField(max_length=255, required=True)
     account_type = serializers.ChoiceField(
         choices=AccountType.choices, default=AccountType.GENERAL
     )
@@ -49,7 +49,7 @@ class CustomRegisterSerializer(RegisterSerializer):
         return {
             "password1": self._validated_data.get("password1", ""),
             "email": self._validated_data.get("email", ""),
-            "name": self._validated_data.get("name", ""),
+            "username": self._validated_data.get("username", ""),
             "account_type": self._validated_data.get(
                 "account_type", "general"
             ),
@@ -57,7 +57,7 @@ class CustomRegisterSerializer(RegisterSerializer):
 
     def custom_signup(self, request, user):
         cleaned_data = self.get_cleaned_data()
-        user.name = cleaned_data.get("name")
+        user.username = cleaned_data.get("username")
         user.account_type = cleaned_data.get("account_type")
         user.save()
 
@@ -65,9 +65,9 @@ class CustomRegisterSerializer(RegisterSerializer):
         return super(CustomRegisterSerializer, self).update(
             instance, validated_data
         )
-
     def create(self, validated_data):
-        return super(CustomRegisterSerializer, self).create(validated_data)
+        # return super(CustomRegisterSerializer, self).create(validated_data)
+        return Response({"message": "Регистрация прошла успешно"}, status=status.HTTP_200_OK)
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -75,7 +75,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = (
             "id",
-            "name",
+            "username",
             "email",
             "account_type",
             "profile_pic",
@@ -91,21 +91,21 @@ class CustomTokenSerializer(TokenSerializer):
 
 
 class ProfileCreateUpdateSerializer(serializers.ModelSerializer):
-    fields_names = ["name", "profile_pic"]
+    fields_names = ["username", "profile_pic"]
 
     class Meta:
         model = User
-        fields = ("profile_pic", "name")
+        fields = ("profile_pic", "username")
 
 
 class UserInfoSerializer(serializers.ModelSerializer):
-    fields_names = ["id", "name", "profile_pic"]
+    fields_names = ["id", "username", "profile_pic"]
 
     class Meta:
         model = User
         fields = (
             "id",
-            "name",
+            "username",
             "profile_pic",
         )
 
