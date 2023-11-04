@@ -70,6 +70,10 @@ class User(AbstractUser):
     phone_number = models.CharField(max_length=20, help_text='Введите свой номер телефона')
     fisrt_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
+    history_event = models.ManyToManyField(Event)
+    favorite_event = models.ManyToManyField(Event)
+    first_name = None
+    last_name = None
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
