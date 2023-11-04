@@ -52,12 +52,15 @@ class Common(Configuration):
         "django_celery_beat",
         "django_celery_results",
         # our apps
+        'axes',
         "powerbank.apps.common.apps.CommonConfig",
         "powerbank.apps.accounts.apps.AccountsConfig",
         "powerbank.apps.event.apps.EventConfig",
     ]
 
     MIDDLEWARE = [
+        'axes.middleware.AxesMiddleware',
+
         "django.middleware.security.SecurityMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
         "corsheaders.middleware.CorsMiddleware",
@@ -69,6 +72,10 @@ class Common(Configuration):
     ]
 
     ROOT_URLCONF = "powerbank.urls"
+
+    AXES_FAILURE_LIMIT = 3  # Количество попыток, после которого IP будет заблокирован
+    AXES_LOCK_OUT_AT_FAILURE = True  # Блокировать IP после превышения лимита
+    AXES_COOLOFF_TIME = 1  # Время блокировки IP в минутах
 
     TEMPLATES = [
         {
