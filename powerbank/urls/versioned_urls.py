@@ -7,15 +7,15 @@ from powerbank.apps.accounts.views import ProfileViewSet
 from powerbank.apps.event.views.event_views import (
     EventAPIView,
     ReviewAPIView,
-    RecommendationAPIView,
     ParticipationAPIView,
+    RecommendationViewSet,
 )
 
 router = SimpleRouter()
 router.register("profile", ProfileViewSet, basename="profile")
 router.register('events', EventAPIView, basename='event_list')
 router.register('review', ReviewAPIView, basename='review_list')
-router.register('recommendation', RecommendationAPIView, basename='recommendation_list')
+router.register(r'recommendations', RecommendationViewSet, basename='recommendation_list')
 router.register('participation', ParticipationAPIView, basename='participation_list')
 
 versioned_urls = [path("", include(router.urls))]
