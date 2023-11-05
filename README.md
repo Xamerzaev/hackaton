@@ -1,24 +1,31 @@
-# powerbank
-This project is the starting point for a new django backend project. It is based on the DRF framework.
+# Описание приложения "Way Gulam"
 
-# Project dev details
+![Way Gulam](https://example.com/waygulam-icon.png)
 
-## App Structure
-All the apps are located in the `powerbank/apps` folder. The project uses a custom `startapp` command, refer `powerbank/management/commands/startapp.py` for more information.
+Way Gulam - это приложение, разработанное для облегчения поиска и получения информации о мероприятиях, проходящих на территории Чеченской республики и в дальнейшем за ее пределами.
 
-The command initializes a new app with the following:
-- A models directory as opposed to a generic `models.py` file which is created by Django's default `startapp` command, this allows you to have models separated by their use-case and helps to keep the project clean.
-- A `views` directory which corresponds to the above reasoning for having a models directory.
-- A `seriazliers` directory which corresponds to the above reasoning for having a models directory.
+## О проекте "Way Gulam"
 
-The other files and folders are similar to how Django does (`admin.py`, `apps.py`).
+### Структура приложения
 
-This command ensures that the apps are added to the `apps` folder and are initialized in accordance with the project-setup.
-To add a new app run:
+Все приложения располагаются в папке `powerbank/apps`. Проект использует собственную команду `startapp`, см. `powerbank/management/commands/startapp.py` для дополнительной информации.
+
+Эта команда инициализирует новое приложение со следующими элементами:
+
+- Директория `models`, вместо общего файла `models.py`, что позволяет разделять модели по их предназначению и поддерживает чистоту проекта.
+- Директория `views`, соответствующая вышеуказанному принципу разделения.
+- Директория `serializers`, также соответствующая вышеуказанному принципу.
+
+Другие файлы и папки подобны тем, которые создает Django (`admin.py`, `apps.py`).
+
+Эта команда гарантирует, что приложения добавляются в папку `apps` и инициализируются в соответствии с настройками проекта. Чтобы добавить новое приложение, выполните следующую команду:
+
 ```bash
 $ python manage.py startapp <app_name>
 ```
-Then include the app to the `INSTALLED_APPS` list in `config/base.py` like so:
+
+Затем включите приложение в список `INSTALLED_APPS` в файле `config/base.py`, следуя такому образу:
+
 ```python
 INSTALLED_APPS = [
     ...
@@ -26,7 +33,9 @@ INSTALLED_APPS = [
     ...
 ]
 ```
-eg: if your `app_name` is `foo` then this would be:
+
+Например, если имя вашего приложения - "foo", то это будет выглядеть так:
+
 ```python
 INSTALLED_APPS = [
     ...
@@ -35,40 +44,40 @@ INSTALLED_APPS = [
 ]
 ```
 
-It is always nice to include the complete config while adding the app in the `INSTALLED_APPS` list. This maintains consistency when using signals.
+Рекомендуется всегда включать полную конфигурацию при добавлении приложения в список `INSTALLED_APPS`. Это поддерживает последовательность при использовании сигналов.
 
-## Settings
+### Настройки
 
-The project uses [`django-configurations`](https://django-configurations.readthedocs.io/en/stable/) for class based settings, there are two configurations available, `Dev` and `Prod`, the common settings exist in `config/base.py`, `Dev` in `config/dev.py` and  `Prod` in `config/prod.py`.
+Проект использует [`django-configurations`](https://django-configurations.readthedocs.io/en/stable/) для классовых настроек. В проекте доступны две конфигурации: `Dev` и `Prod`. Основные настройки находятся в файле `config/base.py`, `Dev` - в файле `config/dev.py`, а `Prod` - в файле `config/prod.py`.
 
-You can use the `DJANGO_CONFIGURATION` environment variable to switch between the configurations, the `Dev` settings are used by default.
+Вы можете использовать переменную окружения `DJANGO_CONFIGURATION` для переключения между конфигурациями. Настройки `Dev` используются по умолчанию.
 
-### Environment Variables
-Most of the configurations in the project are based on environment variables, you have the following options to use them:
-- Set them up in a `.env` file in the root of the project, i.e. the place where you have this `README.md` file, you can refer to the `.env.template` for the available options and easily create your configuration file using that.
-- Set them up via the environment variables themselves.
-- Set them up in the docker / kubernetes runtime via the `.env` file, most of the things still remain the same except that you will need to get rid of the comments in `.env.template` while creating the `.env` file.
+### Переменные окружения
 
-You can still run the project without creating any of those files because there are defaults available to almost all of the required settings but, you will need to set up the db instances, rabbit mq (in case you want to use celery) and make sure the settings match the ones used by default in the configurations. It is recommended to always have a `.env` file managing these settings.
+Большинство конфигураций в проекте зависят от переменных окружения. У вас есть несколько способов использовать их:
 
-NOTE:- The values for `POWERBANK_PASSWORD_RESET_URL` and `POWERBANK_EMAIL_VERIFICATION_URL` needs to be set in order for these flows to work properly, they make sure that the redirection happens to the frontend URLs for password reset and email verification.
+- Задать их в файле `.env` в корне проекта, там, где находится этот файл `README.md`. Вы можете обратиться к `.env.template` для доступных вариантов и легко создать файл конфигурации, используя этот шаблон.
+- Задать их непосредственно через переменные окружения.
+- Задать их во время выполнения docker / kubernetes с использованием файла `.env`. Большинство настроек остаются такими же, за исключением того, что вам нужно будет избавиться от комментариев в `.env.template` при создании файла `.env`.
 
-The email verification could either be a page that gets and processes the link and sends the corresponding request to BE for email verification or have a page that waits for an explicit confirmation with the user.
+Вы по-прежнему можете запустить проект без создания любых из этих файлов, так как по умолчанию имеются настройки для большинства требуемых параметров. Однако вам нужно будет настроить экземпляры БД, RabbitMQ (если вы планируете использовать Celery) и убедиться, что настройки соответствуют настройкам, используемым по умолчанию в конфигурациях. Рекомендуется всегда иметь файл `.env`, управляющий этими настройками.
 
-## Documentation
-The project uses `drf-yasg` to auto-create documentation for the API endpoints, but the generated documentation is not very good, hence, this project uses a custom schema to manage the documentation.
+**Примечание**: Значения для `POWERBANK_PASSWORD_RESET_URL` и `POWERBANK_EMAIL_VERIFICATION_URL` должны быть установлены для корректной работы сброса пароля и подтверждения по электронной почте. Они гарантируют, что перенаправление происходит на URL-адреса веб-интерфейса для сброса пароля и подтверждения адреса электронной почты.
 
-The details for each endpoint are managed using a class, for example, the `accounts` app supports profile update, so the `ProfileUpdate` class is used to manage the documentation for that endpoint, it looks something like this:
-    
+### Документация
+
+В проекте используется `drf-yasg` для автоматического создания документации для API-точек, но созданная документация не всегда идеальна, поэтому в этом проекте используется собственная схема для управления документацией.
+
+Детали для каждой точки API управляются с использованием класса. Например, приложение `accounts` поддерживает обновление профиля, и для управления документацией этой точки используется класс `ProfileUpdate`. Он выглядит примерно так:
+
 ```python
 class ProfileUpdate:
     desc = f"""
-Profile Update is an API endpoint to update the profile associated
-with a particular user.
+    Profile Update - это API-точка для обновления профиля, связанного с определенным пользователем.
 
-By using this endpoint, you can make a patch call to update the profile
-associated with any user. The {fields_to_md(ProfileCreateUpdateSerializer.fields_names)}
-are the fields that can currently be updated
+    Используя эту точку, вы можете отправить
+
+ запрос на обновление профиля пользователя. Следующие поля могут быть обновлены: {fields_to_md(ProfileCreateUpdateSerializer.fields_names)}
     """  # noqa
 
     responses = {
@@ -97,12 +106,13 @@ are the fields that can currently be updated
     }
 ```
 
-The examples come from `config/examples` and look something like this:
+Примеры берутся из `config/examples` и выглядят примерно так:
+
 ```python
 profile_update_200_example = {
     "application/json": {
         "id": 1,
-        "name": "Test developer",
+        "name": "Тестовый пользователь",
         "profile_pic": "/some_pic.jpg"
     },
 }
@@ -110,19 +120,19 @@ profile_update_200_example = {
 profile_update_401_example = {
     "application/json": {
         "error": "NotAuthenticated",
-        "detail": "Incorrect authentication credentials.",  # noqa
+        "detail": "Неверные учетные данные.",  # noqa
     }
 }
 
 profile_update_403_example = {
     "application/json": {
         "error": "PermissionDenied",
-        "detail": "You do not have permission to perform this action."
+        "detail": "У вас нет разрешения на выполнение этого действия."
     }
 }
 ```
 
-After setting up the class, you can use the `swagger_auto_schema` decorator to plug the specification into the view.
+После настройки класса вы можете использовать декоратор `swagger_auto_schema` для внедрения спецификации в представление.
 
 ```python
 @method_decorator(
@@ -132,27 +142,30 @@ class ProfileViewSet(UpdateModelMixin, PsqMixin, GenericViewSet):
     ...
 ```
 
-In the above example, the `ProfileUpdate` class we declared earlier is used to plug those settings onto the `partial_update` action.
+В приведенном выше примере класс `ProfileUpdate`, который мы ранее определили, используется для добавления этих настроек к действию `partial_update`.
 
-## The views
+### Представления
 
-The project is set up to use [`GenericViewSet`](https://www.django-rest-framework.org/api-guide/viewsets/#genericviewset), it further uses different [`mixins`](https://www.django-rest-framework.org/api-guide/generic-views/#mixins) to provide the `create`, `retrieve`, `update` and `destroy` actions.
-You can set up custom actions for anything else that you might need to do.
+Проект настроен на использование [`GenericViewSet`](https://www.django-rest-framework.org/api-guide/viewsets/#genericviewset). Он также использует различные [`mixins`](https://www.django-rest-framework.org/api-guide/generic-views/#mixins) для предоставления действий `create`, `retrieve`, `update` и `destroy`. Вы можете настроить пользовательские действия для любых других операций, которые вам могут понадобиться.
 
-The views also use the [`PsqMixin`](https://github.com/drf-psq/drf-psq#1-psqmixin-class) to configure different serizlizers and permissions for the actions. The serializers come from the `serializers` directory and the permissions are from the `permissions` directory (or file, as per your convinience).
+Представления также используют [`PsqMixin`](https://github.com/drf-psq/drf-psq#1-psqmixin-class) для настройки различных сериализаторов и разрешений для действий. Сериализаторы берутся из директории `serializers`, а разрешения - из директории `permissions` (или файла, на ваше усмотрение).
 
-## Routers
-The `GenericViewSet` automatically sets up the URLs based on the mixins you use with it, it also adds the custom actions as urls. Thus, we have `urls/versioned_urls.py` which uses a [`SimpleRouter`](https://www.django-rest-framework.org/api-guide/routers/#simplerouter) to add these viewsets and plug them at different endpoints.
+### Роутеры
 
-### Versioning
-The version comes from the environment variables, you can set it up in the `.env` file. To add and support different versions, you can have differnt `urls` list in the `urls/versioned_urls.py` file, then update the environment to default to the latest version. You can manually include the other versions in `urls/__init__.py` as and when needed.
+`GenericViewSet` автоматически настраивает URL на основе используемых смешанных классов. Он также добавляет пользовательские действия в виде URL. Поэтому у нас есть `urls/versioned_urls.py`, который использует [`SimpleRouter`](https://www.django-rest-framework.org/api-guide/routers/#simplerouter) для добавления этих представлений и их размещения по разным конечным точкам.
 
-## Database
-The project supports PostgreSQL, PostGIS, MySQL, MySQL (GIS), Oracle, Oracle (GIS), Redshift, CockroachDB, and SQLite, you can refer [this](https://github.com/jazzband/dj-database-url#url-schema) table in order to find out the details on forming the url corresponding to your database.
+### Версионирование
 
-# Project deployment
-The project contains a production-ready `Dockerfile`, refer `Docker/Docerfile.web` and `Docker/Dockerfile.celery` for more details. You can use these dockerfiles with either `docker-compose` or `kubernetes` to deploy the project.
+Версия берется из переменных окружения, вы можете настроить ее в файле `.env`. Чтобы добавить и поддерживать разные версии, вы можете иметь разные списки `urls` в файле `urls/versioned_urls.py`. Затем обновите окружение, чтобы по умолчанию использовалась последняя версия. Вы можете вручную включать другие версии в файле `urls/__init__.py`, по мере необходимости.
 
-The Dockerfile uses `uwsgi` to run the project, this allows for serving `static` and `media` files right from your container.
+### База данных
 
-The support for `kubernetes` is not yet implemented, but it is planned to be implemented soon.
+Проект поддерживает PostgreSQL, PostGIS, MySQL, MySQL (GIS), Oracle, Oracle (GIS), Redshift, CockroachDB и SQLite. Вы можете обратиться к [этой таблице](https://github.com/jazzband/dj-database-url#url-schema) для получения информации о том, как формировать URL-адрес для вашей базы данных.
+
+# Развертывание проекта
+
+Проект включает в себя готовый для производства файл `Dockerfile`, см. `Docker/Docerfile.web` и `Docker/Dockerfile.celery` для получения более подробной информации. Вы можете использовать эти Docker-файлы с помощью `docker-compose` или `kubernetes` для развертывания проекта.
+
+Dockerfile использует `uwsgi` для запуска проекта, что позволяет обслуживать статические и медиа файлы непосредственно из вашего контейнера.
+
+Поддержка `kubernetes` еще не реализована, но планируется в ближайшем будущем.
