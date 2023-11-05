@@ -1,47 +1,41 @@
-/* PhoneGallery.css */
-.section7 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .desc {
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .title {
-    font-size: 24px;
-    color: #333;
-    margin-top: 10px;
-  }
-  
-  .images {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .images img {
-    width: 150px;
-    height: 300px;
-    /* Добавьте стили по вашему усмотрению */
-  }
-  
-  .button {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  button {
-    background-color: #0070f3;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
+/* .section7 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Две колонки */
+  grid-template-rows: auto auto 1fr; /* Две строки и одна автострока */
+  gap: 20px; /* Расстояние между элементами */
+
+  /* Опциональные стили для раздела (section7) */
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative; /* Чтобы использовать z-index */
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Две колонки */
+  gap: 10px; /* Расстояние между изображениями */
+  justify-content: center;
+
+  /* Опциональные стили для изображений */
+  position: relative; /* Чтобы использовать z-index */
+}
+
+.phone-colors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки для цветов телефонов */
+  gap: 10px; /* Расстояние между цветами */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  position: relative; /* Чтобы использовать z-index */
+}
+
+/* Применение z-index для четвертого изображения, чтобы отобразить его отдельно */
+.separate-phone {
+  grid-row: 1 / span 3; /* Разместить четвертое изображение на трех строках */
+  grid-column: 2; /* Разместить его во второй колонке */
+  z-index: 1; /* Большее значение z-index помещает изображение над другими */
+} */

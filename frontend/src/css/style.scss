@@ -529,12 +529,16 @@ header {
     .images {
         display: flex;
         align-items: center;
-        justify-content: space-evenly
+        justify-content: space-evenly;
+        img {
+            height: 100%;
+            width: 22%;
+        }
     }
-
-    img {
+    
+    .sct7im {
         height: 100%;
-        width: 22%;
+        width: 50%;
     }
 
     .desc {
@@ -554,20 +558,25 @@ header {
     }
 
     .button {
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-        button {
-            margin-top: 4%;
-            width: 230px;
-            height: 70px;
-            flex-shrink: 0;
-            background-color: #00c4f4;
-            border: 0;
-            border-radius: 10px;
-            font-family: "Ubuntu",sans-serif;
-            color: #fff;
-            font-size: 17px;
+        img {
+            width: 100%;
+            height: 50%;
         }
+ 
+        // display: flex;
+        // justify-content: space-evenly;
+        // width: 100%;
+        // button {
+        //     margin-top: 4%;
+        //     width: 230px;
+        //     height: 70px;
+        //     flex-shrink: 0;
+        //     background-color: #00c4f4;
+        //     border: 0;
+        //     border-radius: 10px;
+        //     font-family: "Ubuntu",sans-serif;
+        //     color: #fff;
+        //     font-size: 17px;
+        // }
     }
 }

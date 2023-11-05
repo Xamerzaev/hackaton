@@ -17,6 +17,7 @@ import Phone1 from "../images/phones/1.png"
 import Phone2 from "../images/phones/2.png"
 import Phone3 from "../images/phones/3.png"
 import Phone4 from "../images/phones/4.png"
+import I12 from "../images/12.png"
 
 
 const Index = () => {
@@ -112,20 +113,25 @@ const Index = () => {
 
 
             <div className="section7">
-                <div className="desc"><p>Play Market | Appstore</p></div>
-                <div className="title"><p>Вы можете скачать наше приложение ниже</p></div>
-                <div className="images">
-                    <img src={Phone1} alt="" />
-                    <img src={Phone2} alt="" />
-                    <img src={Phone3} alt="" />
-                    <img src={Phone4} alt="" />
-                </div>
+  <div className="desc">
+    <p>Play Market | Appstore</p>
+  </div>
+  <div className="title">
+    <p>Вы можете скачать наше приложение ниже</p>
+  </div>
+  <div className="images">
+    <img src={Phone1} alt="Phone Color 1" />
+    <img src={Phone2} alt="Phone Color 2" />
+    <img src={Phone3} alt="Phone Color 3" />
+    <img src={Phone4} alt="Phone Color 4" className="separate-phone" />
+  </div>
 
-                <div className="button">
-                    <button>Play Market</button>
-                    <button>Appstore</button>
-                </div>
-            </div>
+  <div className="button">
+    <img src={I12} alt="12" className="sct7img" />
+
+  </div>
+</div>
+
 
             <div className="section4">
                 <div className="s1">
