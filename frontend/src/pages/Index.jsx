@@ -18,6 +18,7 @@ import Phone2 from "../images/phones/2.png"
 import Phone3 from "../images/phones/3.png"
 import Phone4 from "../images/phones/4.png"
 
+
 const Index = () => {
     return (
         <>
@@ -123,10 +124,8 @@ const Index = () => {
                 <div className="button">
                     <button>Play Market</button>
                     <button>Appstore</button>
-                    <button>AppGalery</button>
                 </div>
             </div>
-
 
             <div className="section4">
                 <div className="s1">
