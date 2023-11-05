@@ -1,16 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-
 import Play_icon from "../images/play_icon.svg"
-import Graphic from "../images/graphic.jpg"
+import About from "../images/about.webp"
 
 import Payment from "../images/browser.png"
 import Sell from "../images/phone.png"
 import Wallet from "../images/1telegram.png"
 
 import Map from "../images/map.png"
-import Planet from "../images/planet.png"
 import Telegram2 from "../images/telegram2.png"
 
 import Phone1 from "../images/phones/1.png"
@@ -38,9 +34,10 @@ const Index = () => {
                     </div>
 
                     <div className="buttons">
+                    <Link to="/event">
                         <button className="blue">
                             Мероприятия
-                        </button>
+                        </button> </Link> 
                         <button className="transparent">
                             <img src={Play_icon}></img>  Навигатор
                         </button>
@@ -53,17 +50,20 @@ const Index = () => {
 
             <div className="index_section">
                 <div className="img">
-                    <img src={Graphic} alt="" />
+                    <img src={About} alt="" width="714" height="464" />
                 </div>
                 <div className="section">
-                    <div className="main_title">
-                        <p>О нас</p>
-                    </div>
-                    <div className="title">Accelerate the world’s transition</div>
-                    <div className="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  mollit anim id est laborum.</div>
-                    <div className="button">
-                        <button>More About Us</button>
-                    </div>
+                <div className="main_title">
+                    <p>О нас</p>
+                </div>
+                <div className="title">Наша команда</div>
+                <div className="desc">
+                    Мы - команда из четырех талантливых разработчиков, стремящихся создать мобильное приложение, которое облегчит поиск и предоставление информации о мероприятиях на территории Чеченской Республики и за ее пределами. Наш состав включает в себя двух экспертов по Python, опытного фронтенд-разработчика и талантливого дизайнера.
+                </div>
+                <div className="button">
+                    <button>Узнать больше о нас</button>
+                </div>
+
                 </div>
             </div>
 

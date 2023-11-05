@@ -86,8 +86,11 @@ const Cap = (props) => {
                     </div>
                     
                     <div className="download">
-                        <button>Профиль</button>
-                    </div>
+                    <Link to="/profile">
+                    <button className="blue" style={{ height: "50px" }}>
+                            Профиль
+                        </button> </Link> 
+                      </div>
 
 {/* __________________________________________________________________ */}
     {isPopupOpen && (
