@@ -1,6 +1,6 @@
 # Описание приложения "Way Gulam"
 
-![Way Gulam](https://gdb.rferl.org/793E09AD-8DED-4FB8-9A77-633434D7994B_cx0_cy6_cw0_w1200_r1.jpg)
+![Way Gulam](https://imageup.ru/img36/4605910/telegram-cloud-photo-size-2-5348493559797501315-y.jpg.html)
 
 Way Gulam - это приложение, разработанное для облегчения поиска и получения информации о мероприятиях, проходящих на территории Чеченской республики и в дальнейшем за ее пределами. Все API-точки приложения доступны в Swagger по адресу: [http://127.0.0.1:8000/_platform/docs/v1/swagger/](http://127.0.0.1:8000/_platform/docs/v1/swagger/).
 
