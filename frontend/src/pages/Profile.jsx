@@ -37,7 +37,7 @@ const Index = ({ isAuthenticated }) => {
           {isAuthenticated ? (
             <>
               <div className="title2">
-                <Link to="/history_event">
+                <Link to="/history">
                   <p>История мероприятий</p>
                 </Link>
               </div>
