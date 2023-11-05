@@ -15,8 +15,6 @@ from powerbank.apps.accounts.views import (
 )
 
 
-# The following function is to be used with the password_reset_confirm URL.
-# Scroll down for more details.
 def empty_view(request):
     return HttpResponse("")
 

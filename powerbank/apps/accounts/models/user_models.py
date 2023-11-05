@@ -47,7 +47,6 @@ def user_directory_path(instance, filename):
 
 
 class AccountType(models.TextChoices):
-    # Just here so that it can be extended easily later
     GENERAL = "general", _("General")
     STAFF = "staff", _("Staff")
 

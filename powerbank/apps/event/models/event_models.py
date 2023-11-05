@@ -32,6 +32,7 @@ class Event(models.Model):
     def __str__(self) -> str:
         return self.name
 
+
 class Review(models.Model):
     description = models.TextField()
     rating = models.IntegerField(

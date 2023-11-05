@@ -1,9 +1,7 @@
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 
-from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework import viewsets
 
 from powerbank.apps.event.models.event_models import (Event,
@@ -18,6 +16,7 @@ from powerbank.apps.event.serializers.event_serializers import (EventSerializer,
 from powerbank.apps.event.permission import IsParticipant
 
 User = settings.AUTH_USER_MODEL
+
 
 class OrganizationViewSet(viewsets.ModelViewSet):
     queryset = Organization.objects.all()

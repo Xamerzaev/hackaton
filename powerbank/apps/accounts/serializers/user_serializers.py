@@ -1,3 +1,7 @@
+from django.conf import settings
+
+from rest_framework import serializers
+
 from dj_rest_auth.models import TokenModel
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from dj_rest_auth.serializers import (
@@ -7,8 +11,6 @@ from dj_rest_auth.serializers import (
     PasswordResetSerializer,
     TokenSerializer,
 )
-from django.conf import settings
-from rest_framework import serializers
 
 from powerbank.apps.accounts.forms import CustomPasswordResetForm
 from powerbank.apps.accounts.models.user_models import AccountType, User
@@ -117,7 +119,6 @@ class UserInfoSerializer(serializers.ModelSerializer):
 class CustomPasswordResetSerializer(PasswordResetSerializer):
     fields_names = ["email"]
 
-    # Override to use custom form
     @property
     def password_reset_form_class(self):
         return CustomPasswordResetForm
