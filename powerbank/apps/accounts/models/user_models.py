@@ -58,9 +58,10 @@ class User(AbstractUser):
     ]
     username = None
     email = models.EmailField(unique=True)
-    role = models.CharField(max_length=64, choices=ROLES, default='Participant')
-    name = models.CharField(max_length=128)
+    role = models.CharField('Роль пользователя',max_length=64, choices=ROLES, default='Participant')
+    name = models.CharField('Имя', max_length=128)
     profile_pic = models.ImageField(
+        "Аватарка",
         upload_to=user_directory_path,
         name="profile_pic",
         blank=True,
@@ -69,9 +70,9 @@ class User(AbstractUser):
     account_type = models.CharField(
         choices=AccountType.choices, default=AccountType.GENERAL, max_length=8
     )
-    history_event = models.ManyToManyField(Event, related_name='history_users')
-    favorite_event = models.ManyToManyField(Event, related_name='favorite_users')
-    phone_number = models.CharField(max_length=20, help_text='Введите свой номер телефона')
+    history_event = models.ManyToManyField(Event, related_name='history_users', verbose_name='История мероприятий')
+    favorite_event = models.ManyToManyField(Event, related_name='favorite_users', verbose_name='Избранные мероприятия')
+    phone_number = models.CharField(max_length=20, help_text='Введите свой номер телефона', verbose_name="Номер телефона")
     first_name = None
     last_name = None
 
