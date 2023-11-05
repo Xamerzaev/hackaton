@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto+Slab&family=Ubuntu&display=swap');
+
+$dark_blue: #030B15;
+$blue: #00C4F4;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {height: 100%;}
+#root {height: 100%;.container {height: 100%;}}
+body {height: 100%;}
+
+// .container {
+//     background-image: url("../images/background.jpg");
+//     background-repeat: no-repeat;
+//     width: 100%;
+//     background-size: 100%;
+//     height: 4000px;
+// }
+
+html {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    background-color: #030B15;
+
+    width: 100%;
+    height: 100px;
+    // background-color: $dark_blue;
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        height: 10%;
+        // background-color: white;
+    
+
+        .logo {
+            width: 15%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            
+            img {
+                margin-right: 1%;
+            }
+
+            p {
+                margin-left: 10px;
+                font-family: 'Inter', sans-serif;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 30%;
+            nav {
+                display: flex;
+                li {
+                    list-style-type: none;
+                    padding-right: 10%;
+                    button {
+                        font-size: 15px;
+                        font-family: 'Inter', sans-serif;
+                        background-color: rgba(28,28,28,0);
+                        border: 0;
+                        color: white
+                    }
+                }
+            }
+        }
+
+        .download {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            button {
+                width: 209px;
+                height: 50%;
+                background-color: $blue;
+                color: white;
+                letter-spacing: 1.2px;
+                border: 0;
+                border-radius: 8px;
+
+                font-family: 'Inter', sans-serif;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+.main {
+    padding: 5%;
+    padding-left: 10%;
+    width: 45%;
+    height: 700px;
+
+    .title {
+        color: white;
+        
+        p {
+            font-family: 'Roboto Slab', serif;
+            font-size: 80px;
+            span {
+                color: $blue
+        
+            }
+        }
+    }
+
+    .description {
+        margin-top: 3%;
+        p {
+            color: #707070;
+            font-family: 'Roboto Slab', serif;
+            font-size: 19px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px; /* 145.455% */
+        }
+    }
+
+    .buttons {
+        margin-top: 3%;
+        display: flex;
+
+        .blue {
+            font-size: 18px;
+            border-radius: 10px;
+            border: 0;
+            font-family: 'Roboto Slab', serif;
+            background: #00C4F4;
+            color: white;
+            height: 64px;
+            width: 187px;
+            letter-spacing: 1px;
+        }
+
+        .transparent {
+            font-size: 18px;
+            border-radius: 10px;
+            font-family: "Roboto Slab",serif;
+            background-color: rgba(28,28,28,0);
+            color: #fff;
+            height: 64px;
+            width: 250px;
+            opacity: 1;
+            letter-spacing: 1px;
+            border-color: #00c4f4;
+            margin-left: 4%;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+.index_section {
+    margin-top: 15%;
+    display: flex;
+    width: 80%;
+    color: white;
+    margin: 0 auto;
+
+    .img {
+        margin-right: 5%;
+    }
+
+    .main_title {
+        color: $blue;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .main_title {
+            margin-bottom: 2%;
+            font-size: 20px;
+            font-family: "Roboto Slab",serif;
+        }
+
+        .title {
+            margin-bottom: 5%;
+            font-size: 48px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .desc {
+            font-family: 'Ubuntu', sans-serif;
+            color: #CFCFCF;
+            margin-bottom: 5%;
+        }
+
+        .button {
+            button {
+                width: 207px;
+                height: 65px;
+                flex-shrink: 0;
+                background-color: $blue;
+                border: 0;
+                border-radius: 10px;
+                font-family: 'Ubuntu', sans-serif;
+                color: white;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 16%;
+
+    .title1 {
+        color: $blue;
+        font-size: 24px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-bottom: 2%;
+    }
+
+    .title2 {
+        color: white;
+        font-family: "Roboto Slab",serif;
+        letter-spacing: 1px;
+        font-size: 48px;
+        margin-bottom: 2%;
+    }
+
+    .title3 {
+        font-family: 'Ubuntu', sans-serif;
+        color: #a2a2a2;
+        width: 54%;
+    }
+}
+
+.section3 {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 3%;
+    height: 495px;
+    width: 70%;
+    color: white;
+
+    .column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 495px;
+        width: 395px;
+        border-radius: 13px;
+        border: 1px solid $blue;
+        margin-left: 3%;
+        font-family: 'Ubuntu', sans-serif;
+        .icon {
+            margin-bottom: 5%;
+        }
+
+        .title {
+            margin-bottom: 5%;
+            color: white;
+            p {
+                font-size: 32px;
+            }
+        }
+
+        .desc {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #989898;
+        }
+
+        .button {
+
+            button {
+                margin-top: 11%;
+                margin-bottom: 10%;
+                width: 207px;
+                height: 63px;
+                border-radius: 10px;
+                background: #00C4F4;
+                font-family: 'Ubuntu', sans-serif;
+                color: white;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.section4 {
+    display: flex;
+    width: 80%;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 20%;
+    // background-color: rgb(83, 44, 44);
+    color: white;
+
+    .s1 {
+        width: 50%;
+        .t1 {
+            p {
+                font-size: 22px;
+                color: $blue;
+                font-family: 'Ubuntu', sans-serif;
+                margin-bottom: 3%;
+            }
+        }
+
+        .t2 {
+            p {
+                font-size: 46px;
+                font-family: 'Ubuntu', sans-serif;
+                margin-bottom: 3%;
+            }
+        }
+
+        .t3 {
+            p {
+                color: #a1a1a1;
+                font-family: 'Ubuntu', sans-serif;                
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                margin-bottom: 3%;
+            }
+        }
+
+        .t4 {
+            width: 65%;
+            display: flex;
+            justify-content: space-between;
+            .c {
+                p {
+                    color: #CFCFCF;
+                    font-family: "Ubuntu";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;   
+                }
+                .mains {
+                    color: #FFF;
+                    font-family: 'Ubuntu';
+                    font-size: 58px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;   
+                }
+            }
+        }
+    }
+
+    .s2 {
+        width: 50%;
+    }
+}
+
+.section5 {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    color: white;
+    margin-top: 7%;
+
+    .img {
+        img {
+            height: 500px;
+            width: 500px;
+            margin-bottom: 170px;
+        }
+        height: 100px;
+    }
+
+    .container21 {
+        margin-top: 5%;
+        margin-left: 7%;
+        width: 50%;
+
+        .small_title {
+            p {
+                color: #FFF;
+                font-family: "Ubuntu";
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                margin-bottom: 2%;
+            }
+        }
+
+        .title {
+            p {
+                color: #FFF;
+                font-family: "Ubuntu";
+                font-size: 46px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                margin-bottom: 3%;
+            }
+        }
+
+        .desc {
+            p {
+                color: #707070;
+                font-family: "Ubuntu";
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                margin-bottom: 6%;
+            }
+        }
+
+        .input {
+            display: flex;
+            button {
+                width: 219px;
+                height: 52px;
+                flex-shrink: 0;
+                border-radius: 15px;
+                border: 0;
+                color: white;
+                font-family: "Ubuntu";
+                font-size: 18px;
+                background: #00C4F4;
+            }
+        }
+    }
+}
+
+.popup-overlay {
+    margin-top: 1.5%;
+    font-family: "Ubuntu";
+
+    input {
+        width: 100%;
+    }
+
+    .popup {
+        h2 {
+            color: $blue;
+            font-family: "Ubuntu";
+            margin-bottom: 4%;
+        }
+    }
+
+    #password {
+        margin-bottom: 4%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .close-button {
+        margin-top: 4%;
+        color:#989898;
+        background-color:#707070;
+        border-radius: 3px;
+        height: 23px;
+        border: 0;
+    }
+
+    #zareg {
+        color: white;
+        background-color: $blue;
+        border-radius: 3px;
+        height: 23px;
+        border: 0;
+    }
+
+    #confirmPassword {
+        margin-bottom: 5%;
+    }
+}
+
+.section7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 74%;
+    margin: 0 auto;
+    margin-top: 18%;
+    color: white;
+    font-family: "Ubuntu",sans-serif;
+
+
+    .images {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly
+    }
+
+    img {
+        height: 100%;
+        width: 22%;
+    }
+
+    .desc {
+        color: #00c4f4;
+        font-size: 24px;
+        font-family: "Ubuntu",sans-serif;
+        letter-spacing: 2px;
+        margin-bottom: 2%;
+    }
+
+    .title {
+        color: #fff;
+        font-family: "Roboto Slab",serif;
+        letter-spacing: 1px;
+        font-size: 48px;
+        margin-bottom: 3%;
+    }
+
+    .button {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        button {
+            margin-top: 4%;
+            width: 230px;
+            height: 70px;
+            flex-shrink: 0;
+            background-color: #00c4f4;
+            border: 0;
+            border-radius: 10px;
+            font-family: "Ubuntu",sans-serif;
+            color: #fff;
+            font-size: 17px;
+        }
+    }
+}
