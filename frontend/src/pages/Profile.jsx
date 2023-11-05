@@ -56,7 +56,7 @@ const Index = ({ isAuthenticated }) => {
         <div className="section4">
           <div className="s1">
           <div className="section2">
-                 <div className="title2"><Link to="/history_event"><p>История мероприятий</p></Link> </div>
+                 <div className="title2"><Link to="/history"><p>История мероприятий</p></Link> </div>
 
                  <div className="title2"><Link to="/"><p>Выйти из аккаунта</p></Link> </div>
             </div>          </div>

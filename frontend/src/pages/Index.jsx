@@ -136,13 +136,13 @@ const Index = () => {
             <div className="section4">
                 <div className="s1">
                     <div className="t1">
-                        <p>Our vision</p>
+                        <p>Карта</p>
                     </div>
                     <div className="t2">
-                        <p>Users from all over the world</p>
+                        <p>Мероприятия по всему миру</p>
                     </div>
                     <div className="t3">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est laborum.</p>
+                        <p>Функция позволяет пользователю просматривать мероприятия в соответствии с их местоположением на карте. Это особенно полезно для тех, кто хочет найти события, проходящие недалеко от них.</p>
                     </div>
                     <div className="t4">
                         <div className="c">

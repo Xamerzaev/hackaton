@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
 import Play_icon from "../images/play_icon.svg"
+import About from "../images/about.webp"
+
+import Payment from "../images/browser.png"
+import Sell from "../images/phone.png"
+import Wallet from "../images/1telegram.png"
+
 import Map from "../images/map.png"
+import Telegram2 from "../images/telegram2.png"
+
+import Phone1 from "../images/phones/1.png"
+import Phone2 from "../images/phones/2.png"
+import Phone3 from "../images/phones/3.png"
+import Phone4 from "../images/phones/4.png"
+import I12 from "../images/12.png"
 
 
 const Index = () => {
@@ -13,19 +26,20 @@ const Index = () => {
                         <p>
                             WAY
                             <span className="highlighted"> GULAM </span>
-                             - История мероприятий
+                             - Мероприятия
                         </p>
                     </div>
                     <div className="description">
+                        <p>Программа "Way_Gulam" - это мобильное приложение, разработанное для облегчения поиска и получения информации о мероприятиях, проходящих на территории Чеченской республики и в дальнейшем за ее пределами.</p>
                     </div>
 
                     <div className="buttons">
-                    <Link to="/">
+                    <Link to="/event">
                         <button className="blue">
-                            Назад
+                            Мероприятия
                         </button> </Link> 
                         <button className="transparent">
-                            <img src={Play_icon}></img>  Редактор профиля
+                            <img src={Play_icon}></img>  Навигатор
                         </button>
                     </div>
                 </div>
@@ -33,43 +47,105 @@ const Index = () => {
                 </div>
             </div>
 
-            
-            <div className="section2">
-                 <div className="title2"><Link to="/history_event"><p>История мероприятий</p></Link> </div>
 
-                 <div className="title2"><Link to="/"><p>Выйти из аккаунта</p></Link> </div>
-            </div>
-
-            <div className="section4">
-                <div className="s1">
-                    <div className="t1">
-                        <p>Our vision</p>
-                    </div>
-                    <div className="t2">
-                        <p>Users from all over the world</p>
-                    </div>
-                    <div className="t3">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est laborum.</p>
-                    </div>
-                    <div className="t4">
-                        <div className="c">
-                            <p className="mains">32K+</p>
-                            <p>People Joined</p>
-                        </div>
-                        <div className="c">
-                            <p className="mains">250+</p>
-                            <p>Vip Users</p>
-                        </div>
-                        <div className="c">
-                            <p className="mains">87+</p>
-                            <p>Big Company</p>
-                        </div>
-                    </div>
+            <div className="index_section">
+                <div className="img">
+                    <img src={About} alt="" width="714" height="464" />
                 </div>
-                <div className="s2">
-                    <img src={Map} alt="" />
+                <div className="section">
+                <div className="main_title">
+                    <p>Мероприятие</p>
+                </div>
+                <div className="title">День интернета</div>
+                <div className="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ut vel neque natus in doloribus soluta exercitationem, non rem earum, ratione dignissimos porro nesciunt dolor corporis quasi mollitia quidem sed, architecto delectus esse modi. Voluptatibus perferendis neque voluptatem quos unde, suscipit, porro cum voluptate atque, explicabo consequuntur quia temporibus error?
+                </div>
+                <div className="button">
+                    <button>Подробнее</button>
+                </div>
                 </div>
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+
+            <div className="index_section">
+                <div className="img">
+                    <img src={About} alt="" width="714" height="464" />
+                </div>
+                <div className="section">
+                <div className="main_title">
+                    <p>Мероприятие</p>
+                </div>
+                <div className="title">День интернета</div>
+                <div className="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ut vel neque natus in doloribus soluta exercitationem, non rem earum, ratione dignissimos porro nesciunt dolor corporis quasi mollitia quidem sed, architecto delectus esse modi. Voluptatibus perferendis neque voluptatem quos unde, suscipit, porro cum voluptate atque, explicabo consequuntur quia temporibus error?
+                </div>
+                <div className="button">
+                    <button>Подробнее</button>
+                </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <div className="index_section">
+                <div className="img">
+                    <img src={About} alt="" width="714" height="464" />
+                </div>
+                <div className="section">
+                <div className="main_title">
+                    <p>Мероприятие</p>
+                </div>
+                <div className="title">День интернета</div>
+                <div className="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ut vel neque natus in doloribus soluta exercitationem, non rem earum, ratione dignissimos porro nesciunt dolor corporis quasi mollitia quidem sed, architecto delectus esse modi. Voluptatibus perferendis neque voluptatem quos unde, suscipit, porro cum voluptate atque, explicabo consequuntur quia temporibus error?
+                </div>
+                <div className="button">
+                    <button>Подробнее</button>
+                </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <div className="index_section">
+                <div className="img">
+                    <img src={About} alt="" width="714" height="464" />
+                </div>
+                <div className="section">
+                <div className="main_title">
+                    <p>Мероприятие</p>
+                </div>
+                <div className="title">День интернета</div>
+                <div className="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ut vel neque natus in doloribus soluta exercitationem, non rem earum, ratione dignissimos porro nesciunt dolor corporis quasi mollitia quidem sed, architecto delectus esse modi. Voluptatibus perferendis neque voluptatem quos unde, suscipit, porro cum voluptate atque, explicabo consequuntur quia temporibus error?
+                </div>
+                <div className="button">
+                    <button>Подробнее</button>
+                </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+
         </main>
         </>
     );
