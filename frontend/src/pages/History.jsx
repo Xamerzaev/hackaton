@@ -34,7 +34,7 @@ const Index = () => {
                     </div>
 
                     <div className="buttons">
-                    <Link to="/event">
+                    <Link to="/history">
                         <button className="blue">
                             Мероприятия
                         </button> </Link> 

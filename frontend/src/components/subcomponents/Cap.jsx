@@ -78,8 +78,8 @@ const Cap = (props) => {
                     
                     <div className="nav">
                         <nav>
-                            <li><button>О нас</button></li>
-                            <li><button>Мероприятия</button></li>
+                            <li><Link to="/history"><button>О нас</button></Link></li>
+                            <li><Link to="/history"><button>Мероприятия</button></Link></li>
                             <li><button onClick={openPopup}>Регистрация</button></li>
                             <li><button onClick={openPopup1}>Вход</button></li>
                         </nav>

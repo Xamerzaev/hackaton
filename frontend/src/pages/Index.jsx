@@ -34,10 +34,10 @@ const Index = () => {
                     </div>
 
                     <div className="buttons">
-                    <Link to="/event">
+                    <Link to="/history">
                         <button className="blue">
                             Мероприятия
-                        </button> </Link> 
+                        </button></Link> 
                         <button className="transparent">
                             <img src={Play_icon}></img>  Навигатор
                         </button>
